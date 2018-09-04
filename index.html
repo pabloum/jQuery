@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Jquery example</title>
+  </head>
+  <body>
+    <p class="paint">Paint element</p>
+
+
+    <p id="add">Add element</p>
+
+    <div class="elements-added">  </div>
+
+    <div class="wrapper">
+      <p class="remove">Párrafo</p>
+      <p class="remove">Párrafo</p>
+      <p class="remove">Párrafo</p>
+    </div>
+
+    <button class="show">Mostrar</button>
+    <div class="hidden-element">Elemento oculto originalmente</div>
+
+    <button class="hide">Ocultar</button>
+    <div class="showed-element">Elemento a ocultar</div>
+
+    <button class="toggle">Toggle</button>
+    <div class="toggle-element">Element to toggle</div>
+
+    <div class="mouse-events">
+      Mouse events
+    </div>
+
+    <script>
+
+      $(document).ready(function() {
+
+        jQuery('.paint').on('click', function() {
+          $(this).css('background','yellow');
+        });
+
+        $('#add').on('click', function() {
+          $('.wrapper').append("<p class='remove'>Parrafo nuevo</p>");
+        });
+
+        $('.wrapper p').click(function() {
+          $(this).css('color','blue');
+        });
+
+        // $('.remove').on('dblclick', function() {
+        //     $(this).remove();
+        // });
+
+        $(document).on('dblclick', '.remove', function() {
+            $(this).remove();
+        });
+
+        $('.hidden-element').hide();
+
+        $('.show').on('click', function () {
+            $('.hidden-element').show();
+        });
+
+        $('.hide').on('click', function () {
+            $('.showed-element').hide();
+        });
+
+        $('.toggle').on('click', function () {
+            $('.toggle-element').toggle();
+        });
+
+        $('.mouse-events').on('mouseenter', function () {
+            console.log("mouseenter done");
+        });
+
+        $('.mouse-events').on('mouseleave', function () {
+            console.log("mouseleave done");
+        });
+
+        $('.mouse-events').on('mouseover', function () {
+            console.log("mouseover done");
+        });
+
+      });
+
+    </script>
+
+    <style media="screen">
+      .mouse-events{
+        background: green;
+        border: 1px solid black;
+        padding: 33px;
+        margin: 11px;
+      }
+    </style>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script>
+  </head>
+
+  <body>
+
+    <h1>Ajax calls </h1>
+
+    <div class="dog-images">
+      <form   method="post">
+        Select the desired dog:
+        <select name="breed">
+           <option value="golden">Golden Retriever</option>
+           <option value="labrador">Labrador</option>
+           <option value="komondor">Komondor</option>
+           <option value="beagle">Beagle</option>
+           <option value="bluetick">Bluetick</option>
+           <option value="borzoi">Borzoi</option>
+           <option value="bouvier">Bouvier</option>
+           <option value="boxer">Boxer</option>
+           <option value="brabancon">Brabancon</option>
+           <option value="briard">Briard</option>
+           <option value="bulldog">Bulldog</option>
+           <option value="pug">Pug</option>
+        </select>
+
+        <input type="submit" id="button" value="Submit">
+      </form>
+
+    </div>
+
+
+    <script>
+
+    /*
+      en un form con un input slect listar 10 razas de perros disponibles en la api
+      https://dog.ceo/dog-api/breeds-list y al oprimir submit del formulario hacer el
+      request para obtener las fotos de la raza solicitada
+    */
+    // Other way to do the same thing
+    // var requestJQuery = $.get('https:dog.ceo/api/breed/african/images');
+    //
+    // requestJQuery.done(function(data) {
+    //   console.log(data);
+    // }).fail(function(data) {
+    //   console.log("Something went wrong");
+    //   console.log(data);
+    // }).always(function() {
+    //   console.log("This is always executed");
+    // });
+
+      var requestAjax = $.ajax({
+        method: "GET",
+        url: "https://dog.ceo/api/breed/pug/images"
+      }).done(function(data) {
+        console.log("It went good");
+        console.log(data);
+      }).fail(function(data) {
+        console.log("Something went wrong");
+        console.log(data);
+      }).always(function() {
+        console.log("This is always executed");
+      });
+
+      $(document).ready(function() {
+// https://images.dog.ceo/breeds/pug/n02110958_10.jpg
+        var breed;
+
+        $('form').submit(function(e) {
+          e.preventDefault();
+          breed = this.elements.breed.value;
+
+          var url =  `https://dog.ceo/api/breed/${breed}/images`;
+
+          $('.dog-images').append("<img src='" + url + "' alt=''>");
+        });
+
+
+
+      });
+
+
+    </script>
+
+  </body>
+</html>
