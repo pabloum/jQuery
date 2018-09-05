@@ -1,243 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>Dog API</h1>
-    
-    <h1>Selecciones las razas que desea consultar y luego realize la busqueda</h1>
-    
-    <form>
-        Raza:<br>
-        <select id="selectRazas" class="dog-selector">
-            <option value="Seleccione..." selected="selected">Seleccione...</option>
-            <option value="affenpinscher">affenpinscher</option>
-        <option value="african">african</option>
-        <option value="airedale">airedale</option>
-        <option value="akita">akita</option>
-        <option value="appenzeller">appenzeller</option>
-        <option value="basenji">basenji</option>
-        <option value="beagle">beagle</option>
-        <option value="bluetick">bluetick</option>
-        <option value="borzoi">borzoi</option>
-        <option value="bouvier">bouvier</option>
-        <option value="boxer">boxer</option>
-        <option value="brabancon">brabancon</option>
-        <option value="briard">briard</option>
-        <option value="bulldog-boston">boston bulldog</option>
-        <option value="bulldog-french">french bulldog</option>
-        <option value="bullterrier-staffordshire">staffordshire bullterrier</option>
-        <option value="cairn">cairn</option>
-        <option value="cattledog-australian">australian cattledog</option>
-        <option value="chihuahua">chihuahua</option>
-        <option value="chow">chow</option>
-        <option value="clumber">clumber</option>
-        <option value="collie-border">border collie</option>
-        <option value="coonhound">coonhound</option>
-        <option value="corgi-cardigan">cardigan corgi</option>
-        <option value="cotondetulear">cotondetulear</option>
-        <option value="dachshund">dachshund</option>
-        <option value="dalmatian">dalmatian</option>
-        <option value="dane-great">great dane</option>
-        <option value="deerhound-scottish">scottish deerhound</option>
-        <option value="dhole">dhole</option>
-        <option value="dingo">dingo</option>
-        <option value="doberman">doberman</option>
-        <option value="elkhound-norwegian">norwegian elkhound</option>
-        <option value="entlebucher">entlebucher</option>
-        <option value="eskimo">eskimo</option>
-        <option value="germanshepherd">germanshepherd</option>
-        <option value="greyhound-italian">italian greyhound</option>
-        <option value="groenendael">groenendael</option>
-        <option value="hound-afghan">afghan hound</option>
-        <option value="hound-basset">basset hound</option>
-        <option value="hound-blood">blood hound</option>
-        <option value="hound-english">english hound</option>
-        <option value="hound-ibizan">ibizan hound</option>
-        <option value="hound-walker">walker hound</option>
-        <option value="husky">husky</option>
-        <option value="keeshond">keeshond</option>
-        <option value="kelpie">kelpie</option>
-        <option value="komondor">komondor</option>
-        <option value="kuvasz">kuvasz</option>
-        <option value="labrador">labrador</option>
-        <option value="leonberg">leonberg</option>
-        <option value="lhasa">lhasa</option>
-        <option value="malamute">malamute</option>
-        <option value="malinois">malinois</option>
-        <option value="maltese">maltese</option>
-        <option value="mastiff-bull">bull mastiff</option>
-        <option value="mastiff-tibetan">tibetan mastiff</option>
-        <option value="mexicanhairless">mexicanhairless</option>
-        <option value="mix">mix</option>
-        <option value="mountain-bernese">bernese mountain</option>
-        <option value="mountain-swiss">swiss mountain</option>
-        <option value="newfoundland">newfoundland</option>
-        <option value="otterhound">otterhound</option>
-        <option value="papillon">papillon</option>
-        <option value="pekinese">pekinese</option>
-        <option value="pembroke">pembroke</option>
-        <option value="pinscher-miniature">miniature pinscher</option>
-        <option value="pointer-german">german pointer</option>
-        <option value="pomeranian">pomeranian</option>
-        <option value="poodle-miniature">miniature poodle</option>
-        <option value="poodle-standard">standard poodle</option>
-        <option value="poodle-toy">toy poodle</option>
-        <option value="pug">pug</option>
-        <option value="puggle">puggle</option>
-        <option value="pyrenees">pyrenees</option>
-        <option value="redbone">redbone</option>
-        <option value="retriever-chesapeake">chesapeake retriever</option>
-        <option value="retriever-curly">curly retriever</option>
-        <option value="retriever-flatcoated">flatcoated retriever</option>
-        <option value="retriever-golden">golden retriever</option>
-        <option value="ridgeback-rhodesian">rhodesian ridgeback</option>
-        <option value="rottweiler">rottweiler</option>
-        <option value="saluki">saluki</option>
-        <option value="samoyed">samoyed</option>
-        <option value="schipperke">schipperke</option>
-        <option value="schnauzer-giant">giant schnauzer</option>
-        <option value="schnauzer-miniature">miniature schnauzer</option>
-        <option value="setter-english">english setter</option>
-        <option value="setter-gordon">gordon setter</option>
-        <option value="setter-irish">irish setter</option>
-        <option value="sheepdog-english">english sheepdog</option>
-        <option value="sheepdog-shetland">shetland sheepdog</option>
-        <option value="shiba">shiba</option>
-        <option value="shihtzu">shihtzu</option>
-        <option value="spaniel-blenheim">blenheim spaniel</option>
-        <option value="spaniel-brittany">brittany spaniel</option>
-        <option value="spaniel-cocker">cocker spaniel</option>
-        <option value="spaniel-irish">irish spaniel</option>
-        <option value="spaniel-japanese">japanese spaniel</option>
-        <option value="spaniel-sussex">sussex spaniel</option>
-        <option value="spaniel-welsh">welsh spaniel</option>
-        <option value="springer-english">english springer</option>
-        <option value="stbernard">stbernard</option>
-        <option value="terrier-american">american terrier</option>
-        <option value="terrier-australian">australian terrier</option>
-        <option value="terrier-bedlington">bedlington terrier</option>
-        <option value="terrier-border">border terrier</option>
-        <option value="terrier-dandie">dandie terrier</option>
-        <option value="terrier-fox">fox terrier</option>
-        <option value="terrier-irish">irish terrier</option>
-        <option value="terrier-kerryblue">kerryblue terrier</option>
-        <option value="terrier-lakeland">lakeland terrier</option>
-        <option value="terrier-norfolk">norfolk terrier</option>
-        <option value="terrier-norwich">norwich terrier</option>
-        <option value="terrier-patterdale">patterdale terrier</option>
-        <option value="terrier-scottish">scottish terrier</option>
-        <option value="terrier-sealyham">sealyham terrier</option>
-        <option value="terrier-silky">silky terrier</option>
-        <option value="terrier-tibetan">tibetan terrier</option>
-        <option value="terrier-toy">toy terrier</option>
-        <option value="terrier-westhighland">westhighland terrier</option>
-        <option value="terrier-wheaten">wheaten terrier</option>
-        <option value="terrier-yorkshire">yorkshire terrier</option>
-        <option value="vizsla">vizsla</option>
-        <option value="weimaraner">weimaraner</option>
-        <option value="whippet">whippet</option>
-        <option value="wolfhound-irish">irish wolfhound</option>
-        </select> <input type="button" id="AdicionarRaza" value="Adicionar"> <br>
-        Razas a buscar:<br>
-        <label id="razasBusqueda"></label><br>
-        <input type="submit" onclick="buscarRazas(event)" value="Buscar" id="buscarRazas" />
-    </form>
-    
-    
-    <div id="fotos">
-        
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
-    var razasBuscar = new Array();
-var textRazasBusqueda = "";
+  <h1>Dog API</h1>
+
+  <h1>Selecciones las razas que desea consultar y luego realize la busqueda</h1>
+
+  <form>
+    Raza:<br>
+    <select id="selectRazas" class="dog-selector">
+      <option value="Seleccione..." selected="selected">Seleccione...</option>
+      <option value="affenpinscher">affenpinscher</option>
+      <option value="african">african</option>
+      <option value="airedale">airedale</option>
+      <option value="akita">akita</option>
+      <option value="appenzeller">appenzeller</option>
+      <option value="basenji">basenji</option>
+      <option value="beagle">beagle</option>
+      <option value="bluetick">bluetick</option>
+      <option value="borzoi">borzoi</option>
+      <option value="bouvier">bouvier</option>
+      <option value="boxer">boxer</option>
+      <option value="brabancon">brabancon</option>
+      <option value="briard">briard</option>
+      <option value="bulldog-boston">boston bulldog</option>
+      <option value="bulldog-french">french bulldog</option>
+      <option value="bullterrier-staffordshire">staffordshire bullterrier</option>
+      <option value="cairn">cairn</option>
+      <option value="cattledog-australian">australian cattledog</option>
+      <option value="chihuahua">chihuahua</option>
+      <option value="chow">chow</option>
+      <option value="clumber">clumber</option>
+      <option value="collie-border">border collie</option>
+      <option value="coonhound">coonhound</option>
+      <option value="corgi-cardigan">cardigan corgi</option>
+      <option value="cotondetulear">cotondetulear</option>
+      <option value="dachshund">dachshund</option>
+      <option value="dalmatian">dalmatian</option>
+      <option value="dane-great">great dane</option>
+      <option value="deerhound-scottish">scottish deerhound</option>
+      <option value="dhole">dhole</option>
+      <option value="dingo">dingo</option>
+      <option value="doberman">doberman</option>
+      <option value="elkhound-norwegian">norwegian elkhound</option>
+      <option value="entlebucher">entlebucher</option>
+      <option value="eskimo">eskimo</option>
+      <option value="germanshepherd">germanshepherd</option>
+      <option value="greyhound-italian">italian greyhound</option>
+      <option value="groenendael">groenendael</option>
+      <option value="hound-afghan">afghan hound</option>
+      <option value="hound-basset">basset hound</option>
+      <option value="hound-blood">blood hound</option>
+      <option value="hound-english">english hound</option>
+      <option value="hound-ibizan">ibizan hound</option>
+      <option value="hound-walker">walker hound</option>
+      <option value="husky">husky</option>
+      <option value="keeshond">keeshond</option>
+      <option value="kelpie">kelpie</option>
+      <option value="komondor">komondor</option>
+      <option value="kuvasz">kuvasz</option>
+      <option value="labrador">labrador</option>
+      <option value="leonberg">leonberg</option>
+      <option value="lhasa">lhasa</option>
+      <option value="malamute">malamute</option>
+      <option value="malinois">malinois</option>
+      <option value="maltese">maltese</option>
+      <option value="mastiff-bull">bull mastiff</option>
+      <option value="mastiff-tibetan">tibetan mastiff</option>
+      <option value="mexicanhairless">mexicanhairless</option>
+      <option value="mix">mix</option>
+      <option value="mountain-bernese">bernese mountain</option>
+      <option value="mountain-swiss">swiss mountain</option>
+      <option value="newfoundland">newfoundland</option>
+      <option value="otterhound">otterhound</option>
+      <option value="papillon">papillon</option>
+      <option value="pekinese">pekinese</option>
+      <option value="pembroke">pembroke</option>
+      <option value="pinscher-miniature">miniature pinscher</option>
+      <option value="pointer-german">german pointer</option>
+      <option value="pomeranian">pomeranian</option>
+      <option value="poodle-miniature">miniature poodle</option>
+      <option value="poodle-standard">standard poodle</option>
+      <option value="poodle-toy">toy poodle</option>
+      <option value="pug">pug</option>
+      <option value="puggle">puggle</option>
+      <option value="pyrenees">pyrenees</option>
+      <option value="redbone">redbone</option>
+      <option value="retriever-chesapeake">chesapeake retriever</option>
+      <option value="retriever-curly">curly retriever</option>
+      <option value="retriever-flatcoated">flatcoated retriever</option>
+      <option value="retriever-golden">golden retriever</option>
+      <option value="ridgeback-rhodesian">rhodesian ridgeback</option>
+      <option value="rottweiler">rottweiler</option>
+      <option value="saluki">saluki</option>
+      <option value="samoyed">samoyed</option>
+      <option value="schipperke">schipperke</option>
+      <option value="schnauzer-giant">giant schnauzer</option>
+      <option value="schnauzer-miniature">miniature schnauzer</option>
+      <option value="setter-english">english setter</option>
+      <option value="setter-gordon">gordon setter</option>
+      <option value="setter-irish">irish setter</option>
+      <option value="sheepdog-english">english sheepdog</option>
+      <option value="sheepdog-shetland">shetland sheepdog</option>
+      <option value="shiba">shiba</option>
+      <option value="shihtzu">shihtzu</option>
+      <option value="spaniel-blenheim">blenheim spaniel</option>
+      <option value="spaniel-brittany">brittany spaniel</option>
+      <option value="spaniel-cocker">cocker spaniel</option>
+      <option value="spaniel-irish">irish spaniel</option>
+      <option value="spaniel-japanese">japanese spaniel</option>
+      <option value="spaniel-sussex">sussex spaniel</option>
+      <option value="spaniel-welsh">welsh spaniel</option>
+      <option value="springer-english">english springer</option>
+      <option value="stbernard">stbernard</option>
+      <option value="terrier-american">american terrier</option>
+      <option value="terrier-australian">australian terrier</option>
+      <option value="terrier-bedlington">bedlington terrier</option>
+      <option value="terrier-border">border terrier</option>
+      <option value="terrier-dandie">dandie terrier</option>
+      <option value="terrier-fox">fox terrier</option>
+      <option value="terrier-irish">irish terrier</option>
+      <option value="terrier-kerryblue">kerryblue terrier</option>
+      <option value="terrier-lakeland">lakeland terrier</option>
+      <option value="terrier-norfolk">norfolk terrier</option>
+      <option value="terrier-norwich">norwich terrier</option>
+      <option value="terrier-patterdale">patterdale terrier</option>
+      <option value="terrier-scottish">scottish terrier</option>
+      <option value="terrier-sealyham">sealyham terrier</option>
+      <option value="terrier-silky">silky terrier</option>
+      <option value="terrier-tibetan">tibetan terrier</option>
+      <option value="terrier-toy">toy terrier</option>
+      <option value="terrier-westhighland">westhighland terrier</option>
+      <option value="terrier-wheaten">wheaten terrier</option>
+      <option value="terrier-yorkshire">yorkshire terrier</option>
+      <option value="vizsla">vizsla</option>
+      <option value="weimaraner">weimaraner</option>
+      <option value="whippet">whippet</option>
+      <option value="wolfhound-irish">irish wolfhound</option>
+    </select> <input type="button" id="AdicionarRaza" value="Adicionar"> <br>
+    Razas a buscar:<br>
+    <label id="razasBusqueda"></label><br>
+    <input type="submit" onclick="buscarRazas(event)" value="Buscar" id="buscarRazas" />
+  </form>
 
 
-var requestAjax = $.ajax({
+  <div id="fotos">
+
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+  var razasBuscar = new Array();
+  var textRazasBusqueda = "";
+
+
+  var requestAjax = $.ajax({
     method: "GET",
     url: "https://dog.ceo/api/breeds/list/all"
-}).done(function(data){
+  }).done(function(data){
     //var obj = JSON.parse(data.message);
     $.each(data.message, function( key, value ) {
-        // $("#fotos").append('<img id="imagen" src="'+value+'" />');
+      // $("#fotos").append('<img id="imagen" src="'+value+'" />');
       // console.log(key)
-       $('#selectRazas').append('<option value="'+ key +'" >'+ key +'</option>');
-       if(value.length > 1)
-       {
-            $.each(value, function( keyHijo, valueHijo ) {
-                $('#selectRazas').append('<option value="'+ key +'/'+valueHijo +'" >***'+ valueHijo +'</option>');
-            });
-       }
+      $('#selectRazas').append('<option value="'+ key +'" >'+ key +'</option>');
+      if(value.length > 1)
+      {
+        $.each(value, function( keyHijo, valueHijo ) {
+          $('#selectRazas').append('<option value="'+ key +'/'+valueHijo +'" >***'+ valueHijo +'</option>');
+        });
+      }
     });
     console.log(data); //imprimimos la respuesta
-}).fail(function(data){
+  }).fail(function(data){
     console.log("Algo salió mal");
     console.log(data);
-}).always(function(){
-    console.log("No importa si salio bien o mal, tambien se ejecuta");
-});
+  }).always(function(){
+    console.log("No importa si salio bien o mal, también se ejecuta");
+  });
 
-//document ready
+  //document ready
 
-$(function(){
-    
+  $(function(){
+
     $("#AdicionarRaza").click(function() {
-        razasBuscar.push( $("#selectRazas").val())
-        textRazasBusqueda = "";
-        $.each(razasBuscar, function( index, value ) {    
-            textRazasBusqueda = textRazasBusqueda + ' - ' + value;   
-            //$("#fotos").append('<img id="imagen" src="'+value+'" />');
-          });
-          $("#razasBusqueda").text(textRazasBusqueda); 
+      razasBuscar.push( $("#selectRazas").val())
+      textRazasBusqueda = "";
+      $.each(razasBuscar, function( index, value ) {
+        textRazasBusqueda = textRazasBusqueda + ' - ' + value;
+        //$("#fotos").append('<img id="imagen" src="'+value+'" />');
       });
-    
+      $("#razasBusqueda").text(textRazasBusqueda);
+    });
+
     $("#buscarRazas").click(function(e) {
-        e.preventDefault();
-        $("#fotos").html('');
-        ProcesarRazas();
+      e.preventDefault();
+      $("#fotos").html('');
+      ProcesarRazas();
     });
 
-    
-});
+
+  });
 
 
-function ProcesarRazas(){
-    $.each(razasBuscar, function( index, value ) {    
-        ConsultarApiRaza(value)        
+  function ProcesarRazas(){
+    $.each(razasBuscar, function( index, value ) {
+      ConsultarApiRaza(value)
     });
-}
+  }
 
-function ConsultarApiRaza(raza)
-{
+  function ConsultarApiRaza(raza)
+  {
     var htmlRaza = "<h1>"+raza+"</h1><div >"
-    
+
     var requestJQuery = $.get('https://dog.ceo/api/breed/'+raza+'/images');
 
     requestJQuery.done(function(data){
-        $.each(data.message, function( index, value ) {
-            if(index < 10){
-                htmlRaza += '<img height="100" width="100" id="imagen" src="'+value+'" />';
-            }
-            else{
-                return false;
-            }        
-        });
-        htmlRaza += "</div>";
-        $("#fotos").append(htmlRaza);
+      $.each(data.message, function( index, value ) {
+        if(index < 10){
+          htmlRaza += '<img height="100" width="100" id="imagen" src="'+value+'" />';
+        }
+        else{
+          return false;
+        }
+      });
+      htmlRaza += "</div>";
+      $("#fotos").append(htmlRaza);
     }).fail(function(data){
-        console.log("Algo salió mal");
-        console.log(data);
+      console.log("Algo salió mal");
+      console.log(data);
     }).always(function(){
-        console.log("No importa si salio bien o mal, tambien se ejecuta");
+      console.log("No importa si salio bien o mal, tambien se ejecuta");
     });
-}
-    </script>
+  }
+  </script>
 </body>
 </html>

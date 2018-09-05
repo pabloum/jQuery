@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Post Ajax calls</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-4 offset-4">
+
+          <div class="alert alert-primary" role="alert">
+            <h1> <strong>Create product</strong> </h1>
+          </div>
+
+          <form action="/">
+            <div class="form-group">
+              <label for="name">Title:</label>
+              <input type="text" class="form-control" id="name" name="title" value="" placeholder="Enter Title">
+            </div>
+
+            <div class="form-group">
+              <label for="description">Description:</label>
+              <input type="text" class="form-control" id="description" name="description" value="" placeholder="Enter Description">
+            </div>
+
+            <div class="form-group">
+              <label for="price">Price:</label>
+              <input type="number" class="form-control" id="price" name="price" value="" placeholder="Enter Price">
+            </div>
+
+            <input type="submit" class="btn btn-primary" value="submit">
+          </form>
+        </div>
+      </div>
+
+      <div class="row">
+
+        <div class="col">
+          <div class="products-wrapper">
+            <br>
+            <table class="table table-striped">
+              <thead>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <script>
+    $(document).ready(function () {
+      $('form').submit(function(e) {
+        e.preventDefault();
+        // debugger
+        var product = {
+          "title"       : this.elements.title.value,
+          "description" : this.elements.description.value,
+          "price"       : this.elements.price.value
+        }
+
+        $.ajax({
+          method: "POST",
+          url: "https://test-bootcamp-1524773485979.firebaseio.com/pabloum/products.json",
+          data: JSON.stringify(product),
+          contentType: "application/json"
+        }).done(function (data) {
+          // do some cool stuff
+          // hacer un get a la misma url para obtener los productos que se han creado
+          $.ajax({
+            method: "GET",
+            url: "https://test-bootcamp-1524773485979.firebaseio.com/pabloum/products.json"
+          }).done(function (data) {
+            for (var key in data) {
+              $('.products-wrapper>table').append(
+                `<tr><td>${data[key].title}</td> <td>${data[key].description}</td> <td> ${data[key].price}</td></tr>`
+              );
+            }
+          }).fail(function () {
+            console.log("Something went wrong");
+          });
+          console.log(data);
+        }).fail(function (data) {
+          console.log("Something went wrong. Check your request and try again");
+        });
+      });
+    });
+    </script>
+
+    <style media="screen">
+      body{
+        padding: 50px;
+      }
+    </style>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
