@@ -52,7 +52,7 @@
                 <th>Description</th>
                 <th>Price</th>
               </thead>
-              <tbody>
+              <tbody class="tbody">
 
               </tbody>
             </table>
@@ -64,6 +64,18 @@
     </div>
 
     <script>
+    $.ajax({
+      method: "GET",
+      url: "https://test-bootcamp-1524773485979.firebaseio.com/pabloum/products.json"
+    }).done(function (data) {
+      for (var key in data) {
+        $('.products-wrapper>table').html(
+          `<tr><td>${data[key].title}</td> <td>${data[key].description}</td> <td> ${data[key].price}</td></tr>`
+        );
+      }
+    }).fail(function () {
+      console.log("Something went wrong");
+    });
     $(document).ready(function () {
       $('form').submit(function(e) {
         e.preventDefault();
