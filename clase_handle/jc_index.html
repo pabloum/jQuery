@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Handlebars Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <div class="students">
+
+  </div>
+  <script id="students-template" type="text/x-handlebars-template">
+    {{#each students }}
+    <div class="entry">
+      <h1>Nombre: {{ name }}</h1>
+      <p> Edad: {{ age }}</p>
+      <p>Correo: {{ email }}</p>
+    </div>
+    {{/each}}
+  </script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.2/handlebars.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
+
+  <!-- {{#each students}} -->
+
+      <!-- {{/each}} -->
